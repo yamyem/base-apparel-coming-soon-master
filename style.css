@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root {
+    --desaturatedRed: hsl(0, 36%, 70%);
+    --softRed: hsl(0, 93%, 68%);
+    --darkGrayishRed: hsl(0, 6%, 24%);
+    --gray: #dbe3e5;
+
+/* For Gradients */
+/* 1st */
+    --lighter: hsl(0, 0%, 100%);
+    --light: hsl(0, 100%, 98%);
+
+/* 2nd */
+    --rosa: hsl(0, 80%, 86%);
+    --reddish: hsl(0, 74%, 74%);
+
+/* Typography based on golden ratio*/
+    --xxs: 2px;
+    --xs: 5.5px;
+    --s: 9px;
+    --normal: 16px;
+    --m: 25px;
+    --heading: 41px;
+    --xl: 66px;
+    --xxl: 106px;
+
+/* Shadow */
+    --shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
+    --shadowHover: 0 0 20px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Main */
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 57% 43%;
+    font-size: var(--normal);
+    color: var(--darkGrayishRed);
+}
+
+@media (max-width:376px){
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Left section */
+
+.firstSection{
+    background: url('images/bg-pattern-desktop.svg') no-repeat center / cover;
+    display: grid;
+    grid: repeat(9, 1fr)/ repeat(9, 1fr);
+}
+
+@media (max-width:376px){
+    .firstSection{
+        display: flex;
+        flex-direction: column;
+        background: none;
+    }
+    .logo-img{
+        padding-top: var(--m);
+        padding-left: var(--m);
+        padding-bottom: var(--m);
+        width: 200px;
+    }
+}
+
+.text{
+    grid-row: 2 / 8;
+    grid-column: 2/ 7;
+    display: grid;
+    grid: repeat(6, 1fr)/ repeat(1, 1fr);
+}
+
+@media (max-width:376px){
+    .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+
+h1{
+    font-size: var(--heading);
+    font-weight: 600;
+    letter-spacing: var(--normal);
+    grid-row: 2 / 4;
+    text-transform: uppercase;
+    align-self: center;
+}
+
+span{
+    font-weight: 300;
+    letter-spacing: var(--s);
+    color: var(--desaturatedRed);
+}
+
+p{
+    line-height: var(--m);
+    word-spacing: var(--xs);
+    color: var(--desaturatedRed);
+    
+}
+
+@media (max-width: 376px){
+    h1{
+        padding: var(--m) 0;
+    }
+    p{
+        padding-right: var(--m);
+        padding-left: var(--m);
+    }
+}
+
+
+/* Right section */
+
+.secondSection{
+    background: url('images/hero-desktop.jpg') no-repeat center / cover;
+}
+
+.girl{
+    width: 400px;
+}
+
+
+.second-bg{
+    padding-bottom: var(--heading);
+}
+
+@media (min-width:376px){
+    .second-bg{
+        display: none;
+    }
+}
+
+/* Form */
+form{
+    display: flex;
+    flex-direction: column;
+    height: var(--xxl);
+    margin-top: var(--normal);
+}
+
+@media (max-width: 376px){
+    form{
+        justify-content: center;
+    }
+}
+
+input{
+    width: 70%;
+    height: var(--heading);
+    border: 1px solid var(--gray);
+    padding-left: var(--m);
+    outline: none;
+    border-radius: var(--heading);
+    align-self: center;   
+}
+
+
+
+button{
+    width: 70px;
+    height: var(--heading);
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, var(--rosa), var(--reddish));
+    border-radius: var(--heading);
+    cursor: pointer;
+    margin-left: 5px;
+    align-self: center;
+    box-shadow: var(--shadow);
+}
+
+.input-div{
+    display: flex;
+
+}
+
+@media (max-width: 376px){
+    .input-div{
+        justify-content: center;
+    }
+}
+
+
+/* Styling for false input */
+
+.input-false{
+    border: 1px solid var(--softRed);
+}
+
+.message{
+    margin-top: var(--s);
+    padding-left: var(--m);
+    word-spacing: unset;
+    color: var(--softRed);
+}
+
+.error-sign{
+    height: 20px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: -54.5px;
+}
+
+.display{
+    margin-left: -54.5px;
+}
+
+.hidden{
+    display: none;
+}
+
+
+/* Effects */
+
+button:hover{
+    box-shadow: var(--shadowHover);
+}
+
+.arrow:active{
+    transform: translateX(20px);
+    transition: all 0.5s ease-out;
+}
